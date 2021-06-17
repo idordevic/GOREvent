@@ -4,7 +4,6 @@ const Op = db.Sequelize.Op;
 
 // Kreiranje i spremanje nobog događaja
 exports.create = (req, res) => {
-    // Validate request
     if (!req.body.naziv) {
       res.status(400).send({
         message: "Sadržaj mora biti popunjen!"
@@ -12,14 +11,14 @@ exports.create = (req, res) => {
       return;
     }
   
-    // Create a dogadaj
+    // Kreiraj događaj
     const dogadaj = {
       naziv: req.body.naziv,
       opis: req.body.opis,
       favorit: req.body.favorit ? req.body.favorit : false
     };
   
-    // Save dogadaj in the database
+    // Spremanje događaja u bazu
     dogadaj.create(dogadaj)
       .then(data => {
         res.send(data);
