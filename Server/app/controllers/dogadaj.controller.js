@@ -48,7 +48,7 @@ exports.findAll = (req, res) => {
       });
   };
 
-// Pretraga događaja po id-u
+// Pretraga događaja po id-u.
 exports.findOne = (req, res) => {
     const id = req.params.id;
   
@@ -63,7 +63,7 @@ exports.findOne = (req, res) => {
       });
   };
 
-// Ažuriranje događaja
+// Ažuriranje događaja.
 exports.update = (req, res) => {
     const id = req.params.id;
   
@@ -88,7 +88,7 @@ exports.update = (req, res) => {
       });
   };
 
-// Brisanje događaja
+// Brisanje događaja.
 exports.delete = (req, res) => {
     const id = req.params.id;
   
@@ -113,7 +113,7 @@ exports.delete = (req, res) => {
       });
   };
 
-// Brisanje svih događaja
+// Brisanje svih događaja.
 exports.deleteAll = (req, res) => {
     dogadaj.destroy({
       where: {},
@@ -130,7 +130,7 @@ exports.deleteAll = (req, res) => {
       });
   };
 
-// Prikaz svih događaja favorita
+// Prikaz svih događaja favorita.
 exports.findAllfavorit = (req, res) => {
     dogadaj.findAll({ where: { favorit: true } })
       .then(data => {
